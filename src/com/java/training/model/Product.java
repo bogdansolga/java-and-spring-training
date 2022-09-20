@@ -1,7 +1,7 @@
 package com.java.training.model;
 
 // data holding class --> holds details about a product
-public class Product extends AbstractEntity {
+public class Product extends AbstractEntity implements Comparable<Product> {
 
     // static + final --> creating constants
     private static final String TABLE_NAME = "product";
@@ -63,5 +63,10 @@ public class Product extends AbstractEntity {
     @Override
     public void displayType() {
 
+    }
+
+    @Override
+    public int compareTo(Product o) {
+        return name.compareTo(o.getName());
     }
 }

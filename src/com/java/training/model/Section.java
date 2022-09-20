@@ -6,7 +6,7 @@ public class Section {
 
     private String name;
     // 'has a' relationship
-    private List<Product> products;
+    private List<? extends Product> products;
 
     public String getName() {
         return name;
@@ -16,7 +16,7 @@ public class Section {
         this.name = name;
     }
 
-    public List<Product> getProducts() {
+    public List<? extends Product> getProducts() {
         return products;
     }
 
