@@ -1,5 +1,6 @@
 package com.java.training.d01;
 
+import com.java.training.model.Phone;
 import com.java.training.model.Product;
 
 public class ProductDemo {
@@ -19,5 +20,15 @@ public class ProductDemo {
         Product staticallyCreated =
                 Product.createProduct("Ice cream");
         System.out.println("We want more " + staticallyCreated.getName());
+
+        another.displayName();
+        p.displayName();
+
+        Phone phone = new Phone();
+        phone.setName("Samsung S23");
+        phone.displayName();
+
+        Phone anotherPhone = (Phone) another; // down casting
+        Product anotherOne = (Product) phone; // up casting
     }
 }

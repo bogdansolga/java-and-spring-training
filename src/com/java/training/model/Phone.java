@@ -12,4 +12,9 @@ public class Phone extends Product {
     public void setFancinessLevel(int fancinessLevel) {
         this.fancinessLevel = fancinessLevel;
     }
+
+    @Override
+    public void displayName() {
+        System.out.println("Displaying the phone " + getName());
+    }
 }

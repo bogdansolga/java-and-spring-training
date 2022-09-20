@@ -1,7 +1,7 @@
 package com.java.training.model;
 
 // data holding class --> holds details about a product
-public class Product {
+public class Product extends AbstractEntity {
 
     // static + final --> creating constants
     private static final String TABLE_NAME = "product";
@@ -32,5 +32,36 @@ public class Product {
 
     public static Product createProduct(String name) {
         return new Product(name);
+    }
+
+    public void displayName() {
+        System.out.println("Displaying the product " + name);
+    }
+
+    @Override
+    public String toString() {
+        return "Product {" +
+                "name: '" + name + '\'' +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Product product = (Product) o;
+
+        return name != null ? name.equals(product.name) : product.name == null;
+    }
+
+    @Override
+    public int hashCode() {
+        return name != null ? name.hashCode() : 0;
+    }
+
+    @Override
+    public void displayType() {
+
     }
 }
