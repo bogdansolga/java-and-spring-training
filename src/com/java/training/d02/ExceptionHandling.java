@@ -4,24 +4,39 @@ import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.text.ParseException;
 
+@TrainingSession(
+        trainingDay = TrainingDay.D02,
+        topic = "exception handling",
+        subtopics = {
+                "checked exceptions",
+                "unchecked exceptions",
+                "try catch blocks"
+        }
+)
 public class ExceptionHandling {
 
     public static void main(String[] args) {
-        //checkedExceptions();
+        checkedExceptions();
 
-        uncheckedExceptions();
+        //uncheckedExceptions();
     }
 
     private static void checkedExceptions() {
         NumberFormat numberFormat = new DecimalFormat("####.##");
         try {
-            final Number number = numberFormat.parse("something");
+            final Number number = numberFormat.parse("63782323");
+            System.out.println("The number is " + number);
+            System.out.println(numberFormat.format(number));
         } catch (ParseException e) {
             //e.printStackTrace();
             System.err.println(e.getMessage());
 
             // exception type changing (checked --> unchecked, the same type)
             throw new RuntimeException(e);
+        } catch (Exception e) {
+            // the handling for exception
+        } finally {
+            System.out.println("Do something");
         }
     }
 

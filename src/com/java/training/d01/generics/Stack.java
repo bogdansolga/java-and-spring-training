@@ -16,6 +16,7 @@ public class Stack<Element> {
         return elements.get(index);
     }
 
+    @Deprecated // details why, the replacement method
     public static <Type> void displayItems(List<Type> items) {
     }
 }
